@@ -53,7 +53,7 @@ def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_arr
   holiday_hash[season][new_holiday] = new_holiday_supplies
   end
   end
-  end		  
+  end
 
 def all_winter_holiday_supplies(holiday_hash)
   # return an array of all of the supplies that are used in the winter season
@@ -86,5 +86,13 @@ end
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-
-end
+  bbq_holidays = []
+  holiday_hash.each do |season, holidays_hash|
+  holidays_hash.each do |holiday, supplies|
+  if supplies.include?("BBQ")
+  bbq_holidays << holiday
+  end
+  end
+  end
+  bbq_holidays
+  end
