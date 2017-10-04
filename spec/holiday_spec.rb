@@ -7,13 +7,13 @@ describe "holiday_supplies_hash" do
         :new_years => ["Party Hats"]
       },
       :summer => {
-        :fourth_of_july => ["Fireworks", "BBQ"]
+        :fourth_of_july => ["Fireworks", "BBQ, Grill, Table Cloth"]
       },
       :fall => {
         :thanksgiving => ["Turkey"]
       },
       :spring => {
-        :memorial_day => ["BBQ, Grill, Table Cloth"]
+        :memorial_day => ["BBQ"]
       }
     }
   }
