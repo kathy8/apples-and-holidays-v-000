@@ -12,7 +12,7 @@ holiday_supplies = {
   :thanksgiving => ["Turkey"]
    },
   :spring => {
-  :memorial_day => ["BBQ", "Grill", "Table Cloth"]
+  :memorial_day => ["BBQ"]
   }
   }
 
@@ -87,7 +87,7 @@ def all_holidays_with_bbq(holiday_hash)
 array =[]
 holiday_hash.each do |season, next_hash|
 next_hash.each do |holiday,supplies|
-if supplies.include? "BBQ"
+if supplies.include? ["BBQ", "Grill", "Table Cloth"]
 array.push(holiday)
 end
 end
