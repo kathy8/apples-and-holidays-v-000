@@ -45,28 +45,19 @@ end
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   # code here
   # remember to return the updated hash
-  new_supply = supply
+  new_holiday = holiday_name
+  new_holiday_supplies = supply_array
+  season_for_add = season
   holiday_hash.each do |season, holidays_hash|
-  if season == :spring
-  holidays_hash.each do |holiday, supplies|
- supplies << new_supply
-end
-end
-end
-end
+  if season == season_for_add
+  holiday_hash[season][new_holiday] = new_holiday_supplies
+  end
+  end
+  end		  
 
 def all_winter_holiday_supplies(holiday_hash)
   # return an array of all of the supplies that are used in the winter season
-holiday_name, supply_array)
-new_holiday = holiday_name
-new_holiday_supplies = supply_array
-season_for_add = season
-holiday_hash.each do |season, holidays_hash|
-if season == season_for_add
-holiday_hash[season][new_holiday] = new_holiday_supplies
-end
-end
-end		 
+holiday_hash[:winter].values.flatten
 end
 
 def all_supplies_in_holidays(holiday_hash)
@@ -77,7 +68,19 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+  holiday_hash.each do |season, holidays_hash|
+  season_string = season.to_s
+  puts "#{season_string.capitalize}:"
+  holidays_hash.each do |holiday, supplies|
+  holiday_string = holiday.to_s
+  sub_under_for_space = holiday_string.gsub("_", " ")
+  holiday_string_split = sub_under_for_space.split
+  cap_holiday_array = holiday_string_split.each{|name| name.capitalize!}
+  cap_holiday_name = cap_holiday_array.join(" ")
+  supplies_strings = supplies.join(", ")
+  puts "  #{cap_holiday_name}: #{supplies_strings}"
+end
+end
 end
 
 def all_holidays_with_bbq(holiday_hash)
