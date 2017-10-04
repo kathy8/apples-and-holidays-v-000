@@ -61,7 +61,7 @@ puts "#{season.capitalize}:"
 holidays.each do |holiday, supplies|
 capitalized_holiday = holiday.to_s.split('_').map {|word| word.capitalize  }.join(' ')
 puts "  #{capitalized_holiday}: #{supplies.join(", ")}"
-end 
+end
 end
 end
 
@@ -73,5 +73,5 @@ holidays.map do |holiday, supplies|
 holiday if supplies.include? ("BBQ")
 end
 end
-.flatten.compact    
+.flatten.compact
 end
