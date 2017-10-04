@@ -87,7 +87,7 @@ def all_holidays_with_bbq(holiday_hash)
 array = [:fourth_of_july, :memorial_day]
 holiday_hash.each do |season, next_hash|
 next_hash.each do |holiday, supplies|
-if supplies.include? ["BBQ"]
+if supplies.include? ("BBQ")
 array.push(holiday)
 end
 end
